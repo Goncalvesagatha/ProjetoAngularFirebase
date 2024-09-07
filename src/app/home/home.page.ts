@@ -12,35 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
- paises: any;
- isLoading: boolean = false;
  
-  constructor(
-    private router: Router
-  ){
-this.getPaisCode();
- }
-
- getPaisCode(){
-  this.isLoading = true;
-  fetch('https://restcountries.com/v3.1/all?fields=name,ccn3,flags')
-  .then(dados => dados.json())
-  .then(dados =>{
-    console.log(dados);
-    this.paises=dados;
-  })
-  .catch(erro =>{
-    console.log(erro);
-  })
-  .finally(() =>{
-    this.isLoading = false;
-  })
- }
-
- verDetalhes(ccn3: any){
-  this.router.navigate(['detalhe-pais'],{
-    state: { codigo: ccn3 }
-  });
+  constructor(){
 
  }
 }
