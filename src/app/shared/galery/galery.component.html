@@ -1,0 +1,22 @@
+<ion-content>
+  <ng-container>
+    <ion-row align-items-center><ion-col>Treinos</ion-col></ion-row>
+    <ion-row>
+      <ng-container *ngFor="let treino of this.treinos">
+        <ion-col size="12" size-lg="3">
+          <ion-label>{{treino.titulo}}
+            <ng-container *ngFor="let imagem of treino.fotos">
+              <ion-label><img src="{{imagem.foto}}" alt=""></ion-label>
+
+            </ng-container>
+          </ion-label>
+        </ion-col>
+      </ng-container>
+
+      
+
+    </ion-row>
+    
+  </ng-container>
+
+</ion-content>

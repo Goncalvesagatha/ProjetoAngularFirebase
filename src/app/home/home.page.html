@@ -1,36 +1,11 @@
 <ion-content [fullscreen]="true">
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="12" size-lg="8">
-      <ng-container *ngIf="this.isLoading">
-        <ion-spinner ></ion-spinner>
-      </ng-container>
+  
+  <app-header></app-header>
 
-      
-      <ng-container *ngIf="!this.isLoading">
-        <ion-row class="ion-justify-content-center">
-          <ng-container *ngFor="let pais of this.paises">
-            <ion-col size="12" size-lg="4">
-              <ion-item lines="none" class="on-mouse" (click)="verDetalhes(pais.ccn3)">
-                <ion-thumbnail slot="start">
-                  <img src="{{pais.flags.png}}" alt="">
-                </ion-thumbnail>
-                <ion-label>
-                  <h2>
-                    {{pais.name.common}}
-                  </h2>
-                  <h3>
-                    {{pais.name.official}}
-                  </h3>
-                </ion-label>
-              </ion-item>
-            </ion-col>
-          </ng-container>
-        </ion-row>
-        
-      </ng-container>
+  <app-banner></app-banner>
 
+  <app-galery></app-galery>
 
+  <app-footer></app-footer>
 
-    </ion-col>
-  </ion-row>
 </ion-content>
