@@ -17,9 +17,13 @@ export class PlanetasPage implements OnInit {
     foto: null
   }
 
+  planetas: any = [];
+
   constructor(
     public crudService: CrudService
-  ) { }
+  ) { 
+    this.getPlanetas();
+  }
 
   ngOnInit() {
   }
@@ -29,4 +33,11 @@ export class PlanetasPage implements OnInit {
     this.crudService.insert(this.planeta, 'planetas');
   }
 
+  getPlanetas(){
+    this.crudService.fetchAll('planetas')
+    .then(resp => {
+      console.log(resp);
+      this.planetas = resp;
+    })
+  }
 }
